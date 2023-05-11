@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 
 import Navbar from '@/components/Navbar'
+import { QueryProvider } from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        {children}
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   )
